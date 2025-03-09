@@ -6,11 +6,11 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Changed to flex-start */
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
-    box-sizing: border-box; /* Important for body padding */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    box-sizing: border-box;
 }
 
 .container {
@@ -18,12 +18,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     padding: 20px;
-    width: 95%; /* Increased width for better utilization of mobile screen */
+    width: 95%;
     max-width: 500px;
     text-align: center;
     transition: transform 0.2s ease-in-out;
-    box-sizing: border-box; /* Padding inside width */
-    margin: 10px; /* Add some margin around container */
+    box-sizing: border-box;
+    margin: 10px;
 }
 
 .container:hover {
@@ -46,6 +46,8 @@ h1 {
 
 .input-area, .output-area {
     margin-bottom: 20px;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 label {
@@ -85,8 +87,8 @@ button {
     font-size: 1em;
     font-weight: 500;
     transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-    width: 100%; /* Make button fill container width for better touch experience */
-    box-sizing: border-box; /* For consistent width calculations */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -153,12 +155,13 @@ button:hover {
 /* Media Query for smaller screens (e.g., phones) */
 @media (max-width: 600px) {
     body {
-        padding: 10px; /* Add padding to the body itself on mobile */
+        padding: 10px;
         box-sizing: border-box;
+        align-items: stretch;  /* Changed to stretch */
     }
     .container {
-        width: 98%; /* Even wider to take up the full content space */
-        margin: 5px;   /* Reduced margin for container on small screens */
+        width: 100%;
+        margin: 5px 0;       /* Adjusted to remove horizontal margins */
     }
 
     h1 {
@@ -182,6 +185,6 @@ button:hover {
     }
 
     .animation-container {
-        display: none; /* Remove animations on smaller screens */
+        display: none;
     }
 }
