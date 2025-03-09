@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helicopter JPT Estimation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Helicopter JPT Calculator</h1>
+        <p class="explanatory-text">Enter the current Collective Pitch value and Temperature (°C) to calculate the JPT (°C).</p>
+        <div class="input-area">
+            <label for="cpi">Collective Pitch (CPI):</label>
+            <input type="number" id="cpi" placeholder="Enter CPI Value">
+        </div>
+        <div class="input-area">
+            <label for="temperature">Temperature (°C):</label>
+            <input type="number" id="temperature" placeholder="Enter Temperature in °C">
+        </div>
+        <button id="estimate-button">Calculate JPT</button>
+        <div class="output-area">
+            <label for="jpt"> JPT:</label>
+            <input type="text" id="jpt" readonly>
+        </div>
+    </div>
+    <div class="animation-container">
+        <div class="cog"></div>
+        <div class="rotor"></div>
+        <div class="gear"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
